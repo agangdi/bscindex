@@ -29,20 +29,6 @@ export function Logo({
           opacity: spinning ? 0.6 : 1,
         }}
       >
-        <img
-          className={cx({
-            "is-spinning": spinning,
-          })}
-          alt=""
-          src={require(`images/indexed.png`).default}
-          style={{
-            width: spinning ? 48 : 24,
-            height: spinning ? 48 : 24,
-            marginRight: spinning ? 12 : 8,
-            position: "relative",
-            top: -3,
-          }}
-        />
         {withTitle && (
           <Typography.Title
             level={isMobile ? 3 : 1}

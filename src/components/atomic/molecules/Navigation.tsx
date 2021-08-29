@@ -37,7 +37,6 @@ export function Navigation() {
       <Menu.Item key="index-pools">
         <Link to="/index-pools">
           <Space size="small">
-            <FaSwimmingPool style={{ position: "relative", top: 2 }} />{" "}
             {!isMobile && <span>{tx("INDEX_POOLS")}</span>}
           </Space>
         </Link>
@@ -45,15 +44,13 @@ export function Navigation() {
       <Menu.Item key="staking">
         <Link to="/staking">
           <Space>
-            <RiSafe2Line style={{ position: "relative", top: 2 }} />{" "}
             {!isMobile && <span>{tx("STAKE")}</span>}
           </Space>
         </Link>
       </Menu.Item>
       <Menu.Item>
-        <ExternalLink to="https://legacy.indexed.finance/governance" withIcon={false}>
+        <ExternalLink to="" withIcon={false}>
           <Space size="small">
-            <FaGavel style={{ position: "relative", top: 2 }} />{" "}
             {!isMobile && <span>Vote</span>}
           </Space>
         </ExternalLink>
@@ -61,7 +58,6 @@ export function Navigation() {
       <Menu.Item key="portfolio">
         <Link to="/portfolio">
           <Space size="small">
-            <AiOutlineUser style={{ position: "relative", top: 2 }} />{" "}
             {!isMobile && <span>{tx("PORTFOLIO")}</span>}
           </Space>
         </Link>

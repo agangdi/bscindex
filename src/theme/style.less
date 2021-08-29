@@ -8,7 +8,7 @@
 
 // -- Fonts
 @font-face {
-  font-family: "Main";
+  font-family: "SourceHanSansCN-Normal";
   src: url("./fonts/SourceHansCN/SourceHanSansCN-Normal.otf");
 }
 @font-face {
@@ -127,7 +127,7 @@
 }
 
 // -- Ant Overrides
-@font-family: "Main";
+@font-family: "SourceHanSansCN-Normal";
 
 .ant-page-header {
   border: none !important;
@@ -214,19 +214,13 @@
   }
 }
 .ant-btn-primary.plus {
-  background: -webkit-linear-gradient(
-    55deg,
-    darken(#ad92f7, 20%),
-    darken(#44ca97, 20%) 80%
-  );
-  border: 2px solid rgba(255, 255, 255, 0.7);
-
-  &:hover {
-    background: -webkit-linear-gradient(55deg, #9259ec, #28ad7a 80%);
-    border: 2px solid rgba(255, 255, 255, 0.7);
-  }
+  background: linear-gradient(225deg, #FFE351 0%, #1657FC 97%);
+  border-radius: 2px;
 }
-
+.ant-btn-primary.custom{
+  border: none;
+  padding: 6px 20px 8px 15px;
+}
 .ant-card-hoverable {
   transition: border 0.2s ease-in-out;
   border: 2px solid rgba(255, 255, 255, 0.2);

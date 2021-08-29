@@ -1,6 +1,5 @@
 import { Button } from "antd";
 
-import { WalletFilled } from "@ant-design/icons";
 import { useWalletConnectionDrawer } from "components/drawers";
 
 export function WalletConnector() {
@@ -8,14 +7,13 @@ export function WalletConnector() {
 
   return (
     <Button
-      className="plus"
+      className="plus custom"
       type="primary"
       onClick={open}
-      icon={<WalletFilled width={24} />}
       size="large"
       style={{ marginLeft: 12 }}
     >
-      Connect Wallet
+      Connect to Wallet
     </Button>
   );
 }
