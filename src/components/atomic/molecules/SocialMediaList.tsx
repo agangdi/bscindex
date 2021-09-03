@@ -18,6 +18,7 @@ export function SocialMediaList() {
             symbol={site.name}
             asAvatar={true}
             size="medium"
+            shape="square"
           />
         </a>
       ))}

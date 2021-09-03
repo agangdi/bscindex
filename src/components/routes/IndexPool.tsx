@@ -45,17 +45,20 @@ export function LoadedIndexPool(
           sm: 24,
         }}
       >
-        <Col xs={24} md={8}>
+        <Col xs={24} md={24}>
           <Space
             size="large"
-            direction="vertical"
+            direction="horizontal"
             style={{ marginBottom: isMobile ? 24 : 0, display: "flex" }}
           >
             <IndexPoolDescription {...props} />
             <IndexPoolExternalLinks {...props} />
           </Space>
         </Col>
-        <Col xs={24} md={16}>
+        
+      </Row>
+      <Row>
+        <Col xs={24} md={24}>
           <IndexPoolChart poolId={props.id} />
         </Col>
       </Row>

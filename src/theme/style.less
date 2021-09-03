@@ -27,8 +27,8 @@
 // -- Customs
 .IndexPoolWidget {
   .ant-card-meta-description {
-    padding-left: 12px !important;
-    border-left: 2px solid rgb(73, 255, 255);
+    // padding-left: 12px !important;
+    // border-left: 2px solid rgb(73, 255, 255);
   }
 }
 
@@ -66,8 +66,7 @@
 }
 
 .with-background {
-  background-image: url("../images/bg.svg");
-  background-size: cover;
+  background: #172342;
 }
 
 .fake-flex-gap {
@@ -134,11 +133,14 @@
 }
 
 .ant-layout-header {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.8) !important;
+  border-bottom: none;
 }
 
 .ant-menu {
   border: none !important;
+}
+.ant-card{
+  background: none !important;
 }
 
 .ant-card-head {
@@ -221,6 +223,14 @@
   border: none;
   padding: 6px 20px 8px 15px;
 }
+.ant-btn-primary.blank{
+  font-family: SourceHanSansCN-Medium;
+  font-size: 20px;
+  color: #F8F8F8;
+  letter-spacing: 0;
+  background: none;
+  border: none;
+}
 .ant-card-hoverable {
   transition: border 0.2s ease-in-out;
   border: 2px solid rgba(255, 255, 255, 0.2);
@@ -228,4 +238,43 @@
   &:hover {
     border: 2px solid @success-color;
   }
+}
+.copyright{
+  font-family: SourceHanSansCN-Normal;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 1.73px;
+  line-height: 28px;
+}
+.foot-title{
+  font-family: SourceHanSansCN-Heavy;
+  font-size: 24px;
+  color: #FFFFFF;
+  letter-spacing: 0.5px;
+}
+.ant-statistic-content-value, .colorful-text{
+  background: -webkit-linear-gradient(#D1FF51, #FEE451, #FFE351);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.ant-statistic-title1 .ant-statistic-content-value{
+  font-size: 72px;
+}
+.sub-statistic{
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  align-items: center;
+}
+h4.ant-typography, .ant-typography h4{
+  color: #FFFFFF !important;
+}
+#header-nav .ant-menu-item-selected, #header-nav .ant-menu-item-active{
+  // background: linear-gradient( 3%, #FEE451 87%, #FFE351 87%) no-repeat;
+  // background-size:100% 5px;
+  // background-position-y: bottom;
+  border-bottom:2px solid #D1FF51;
+}
+.ant-menu-item-selected a, .ant-menu-item-active a{
+  color:rgba(255, 255, 255, 1) !important;
 }

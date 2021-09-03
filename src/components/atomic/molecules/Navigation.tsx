@@ -23,6 +23,7 @@ export function Navigation() {
 
   return (
     <Menu
+      id="header-nav"
       mode="horizontal"
       selectedKeys={[selectedKey]}
       style={{

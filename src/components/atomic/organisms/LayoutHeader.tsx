@@ -45,7 +45,6 @@ export function LayoutHeader() {
         left: 0,
         width: "100vw",
         background: "#273251",
-        borderBottom: "2px solid #49ffff",
         zIndex: 10,
         padding: isMobile ? "0 25px" : "0 50px",
       }}

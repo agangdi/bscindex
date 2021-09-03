@@ -38,6 +38,7 @@ export function IndexPoolWidget(props: FormattedIndexPool) {
       className="IndexPoolWidget"
       actions={[
         <Statistic
+          className="sub-statistic"
           key="tvl"
           title="Total Value Locked"
           value={value}

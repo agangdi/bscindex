@@ -5,45 +5,37 @@ export const SLIPPAGE_RATE = 0.01;
 export const PLACEHOLDER_TOKEN_IMAGE = "https://via.placeholder.com/32";
 export const SOCIAL_MEDIA = [
   {
-    name: "Snapshot",
-    image: "snapshot",
-    link: "https://gov.indexed.finance/#/",
-  },
-  {
-    name: "Discourse",
-    image: "discourse",
-    link: "https://forum.indexed.finance/",
-  },
-  {
     name: "Twitter",
     image: "twitter",
-    link: "https://twitter.com/ndxfi",
+    link: "https://twitter.com",
   },
   {
-    name: "Discord",
-    image: "discord",
-    link: "https://discord.gg/jaeSTNPNt9",
+    name: "Facebook",
+    image: "facebook",
+    link: "https://facebook",
+  },
+  {
+    name: "GitHub",
+    image: "github",
+    link: "https://github.com",
+  },
+  {
+    name: "Telegram",
+    image: "telegram",
+    link: "https://telegram",
   },
   {
     name: "Medium",
     image: "medium",
     link: "https://ndxfi.medium.com/",
   },
-  {
-    name: "GitHub",
-    image: "github",
-    link: "https://github.com/indexed-finance",
-  },
+
   {
     name: "Reddit",
     image: "reddit",
-    link: "https://reddit.com/r/indexedfinance",
+    link: "https://reddit.com/",
   },
-  {
-    name: "YouTube",
-    image: "youtube",
-    link: "https://www.youtube.com/channel/UCdbua6FtaiD0emvvBerKRMw",
-  },
+
 ];
 export const INDEX_POOL_TAGLINES: Record<string, string> = {
   // CC10

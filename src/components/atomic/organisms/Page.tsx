@@ -38,16 +38,13 @@ export function Page({
   return (
     <div
       style={{
-        width: isMobile ? "96vw" : "80vw",
+        width: isMobile ? "96vw" : "100%",
         maxWidth: isMobile ? "initial" : 1500,
         minHeight: "100vh",
         margin: isMobile ? "6rem auto 8rem auto" : "8rem auto 8rem auto",
-        background: "#151515",
         position: "relative",
         borderRadius: 16,
-        border: "1px solid rgba(255, 255, 255, .8)",
         paddingTop: isMobile ? "0" : "25px",
-        boxShadow: "0px 0px 50px 0px rgba(40, 0, 40, 0.7)",
       }}
     >
       <Card
@@ -128,46 +125,39 @@ export function Page({
           paddingTop: 0,
         }}
       >
-        <Col
-          xs={24}
-          sm={12}
-          style={{
-            display: isMobile ? "flex" : "block",
-            justifyContent: "center",
-            alignItems: "center",
-            marginBottom: isMobile ? 24 : 0,
-          }}
-        >
-          <SocialMediaList />
-        </Col>
         <Col xs={24} sm={12}>
           <Space
             size="large"
             style={{
               width: "100%",
               alignItems: "center",
-              justifyContent: isMobile ? "center" : "flex-end",
+              justifyContent: isMobile ? "center" : "flex-start",
             }}
             direction={isMobile ? "vertical" : "horizontal"}
           >
-            <Button type="default">
-              <ExternalLink to="https://docs.indexed.finance/">
-                How it works
-              </ExternalLink>
-            </Button>
-            <LegacySiteLink />
-            <BugReportLink />
             <div>
-              <RiCopyrightLine
-                style={{
-                  position: "relative",
-                  top: 2,
-                  textTransform: "uppercase",
-                }}
-              />{" "}
-              Indexed 2021
+              <p className="foot-title">INDEXED</p>
+              <p className="copyright">© COPYRIGHT © 2021</p>
+              <p className="copyright">INDEX.LTD ALL RIGHTS</p>
+              <p className="copyright">RESERVED.</p>
             </div>
           </Space>
+        </Col>
+        <Col
+          xs={24}
+          sm={12}
+          style={{
+            display: isMobile ? "flex" : "block",
+            flexDirection: 'column',
+            justifyContent: "center",
+            textAlign: 'left',
+            alignItems: "center",
+            marginBottom: isMobile ? 24 : 0,
+            paddingLeft: isMobile ? 0 : 200,
+          }}
+        >
+          <p className="foot-title">CONTACT US</p>
+          <SocialMediaList />
         </Col>
       </Row>
     </div>

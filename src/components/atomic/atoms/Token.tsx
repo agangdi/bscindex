@@ -13,6 +13,7 @@ interface Props {
   isPair?: boolean;
   onlyImage?: boolean;
   symbolOverride?: string;
+  shape?: string;
 }
 
 export function Token({
@@ -24,6 +25,7 @@ export function Token({
   amount = "",
   onlyImage = false,
   symbolOverride = "",
+  shape = "circle",
   ...rest
 }: Props) {
   const tokenImageSize = {
@@ -116,8 +118,10 @@ export function Token({
             <Component
               alt={symbol}
               src={image}
+              shape={shape == 'circle' ? 'circle' : 'square'}
               {...rest}
               style={{
+                marginRight: 8,
                 width: tokenImageSize,
                 height: tokenImageSize,
               }}
