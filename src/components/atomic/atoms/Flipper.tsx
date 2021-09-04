@@ -9,8 +9,8 @@ interface Props {
 export function Flipper({ disabled, onFlip }: Props) {
   return (
     <Divider style={{ marginBottom: 0 }}>
-      <Button type="default" onClick={onFlip}>
-        {disabled ? <MdArrowDownward /> : <MdSwapCalls />}
+      <Button className="circle-btn" type="default" onClick={onFlip}>
+        {disabled ? <MdArrowDownward /> : <MdSwapCalls color="#394771" />}
       </Button>
     </Divider>
   );

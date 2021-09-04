@@ -117,12 +117,13 @@ export function Page({
           </div>
         )}
       </Card>
-      <Divider />
+      {/* <Divider /> */}
       <Row
         style={{
           width: "100%",
           padding: 24,
-          paddingTop: 0,
+          paddingTop: 40,
+          backgroundColor: "#273251",
         }}
       >
         <Col xs={24} sm={12}>

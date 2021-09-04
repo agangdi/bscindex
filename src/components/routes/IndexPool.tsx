@@ -30,8 +30,8 @@ export function LoadedIndexPool(
       {props.interaction && (
         <div
           style={{
-            borderLeft: "2px solid #38EE7A",
-            paddingLeft: 24,
+            // borderLeft: "2px solid #38EE7A",
+            // paddingLeft: 24,
             marginBottom: 24,
           }}
         >
@@ -102,10 +102,7 @@ export default function IndexPool() {
             }}
           >
             <Typography.Text>{indexPool.name}</Typography.Text>
-            <IndexPoolInteractionBar
-              indexPool={indexPool}
-              onChange={setInteraction}
-            />
+
           </div>
         ) : (
           <Spin />
@@ -114,7 +111,13 @@ export default function IndexPool() {
       hasPageHeader={true}
     >
       {indexPool ? (
-        <LoadedIndexPool interaction={interaction} {...indexPool} />
+        <div>
+          <IndexPoolInteractionBar
+              indexPool={indexPool}
+              onChange={setInteraction}
+            />
+          <LoadedIndexPool interaction={interaction} {...indexPool} />
+        </div>
       ) : (
         <Spin />
       )}

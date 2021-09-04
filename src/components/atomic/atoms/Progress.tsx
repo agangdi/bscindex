@@ -3,17 +3,17 @@ import { selectors } from "features";
 import { useSelector } from "react-redux";
 
 export function Progress(props: ProgressProps) {
-  const theme = useSelector(selectors.selectTheme);
+  // const theme= useSelector(selectors.selectTheme);
+  const theme = props.theme
   const progressStrokeColor: any =
     theme === "outrun"
       ? {
           strokeColor: {
-            "0%": "#fa79e0",
-            "20%": "#14fdf9",
-            "40%": "#fa79e0",
-            "60%": "#14fdf9",
-            "80%": "#fa79e0",
-            "100%": "#14fdf9",
+            "0%": "#EE8953",
+            "20%": "#4B51D6",
+            "60%": "#FF785B",
+            "90%": "#FF0092",
+            "100%": "#FF00FF",
           },
         }
       : {};

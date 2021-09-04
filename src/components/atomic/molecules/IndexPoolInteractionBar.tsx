@@ -57,14 +57,12 @@ export function IndexPoolInteractionBar({
     if (activeTitle === "Buy") {
       content = (
         <>
-          <Typography.Title level={2}>Buy {indexPool.symbol}</Typography.Title>
           <TradeInteraction indexPool={indexPool} />
         </>
       );
     } else if (activeTitle === "Mint") {
       content = (
         <Space direction="vertical" style={{ marginBottom: 24, width: "100%" }}>
-          <Typography.Title level={2}>Mint {indexPool.symbol}</Typography.Title>
           <Menu
             mode="horizontal"
             style={{ marginLeft: -12 }}
@@ -87,7 +85,6 @@ export function IndexPoolInteractionBar({
     } else if (activeTitle === "Burn")
       content = (
         <Space direction="vertical" style={{ marginBottom: 24, width: "100%" }}>
-          <Typography.Title level={2}>Burn {indexPool.symbol}</Typography.Title>
           <Menu
             mode="horizontal"
             style={{ marginLeft: -12 }}
@@ -118,7 +115,10 @@ export function IndexPoolInteractionBar({
   }, [activeKey, updateContent]);
 
   return (
-    <>
+    <div className="index-pool-interaction-bar">
+      <Typography.Title level={2}>
+        {activeTitle} {indexPool.symbol}
+      </Typography.Title>
       <Button.Group>
         {indexPoolInteractions.map((interaction, index, array) => {
           const isActive = activeTitle === interaction.title;
@@ -138,9 +138,6 @@ export function IndexPoolInteractionBar({
             >
               <Typography.Title level={4}>
                 <Space>
-                  <span style={{ position: "relative", top: 3 }}>
-                    {interaction.icon}
-                  </span>
                   <span>{interaction.title}</span>
                 </Space>
               </Typography.Title>
@@ -148,6 +145,6 @@ export function IndexPoolInteractionBar({
           );
         })}
       </Button.Group>
-    </>
+    </div>
   );
 }

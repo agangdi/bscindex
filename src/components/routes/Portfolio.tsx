@@ -77,7 +77,7 @@ export default function Portfolio() {
         </Row>
       ) : (
         <Space direction="vertical" align="center" style={{ width: "100%" }}>
-          <Empty description="No wallet detected." />
+          <Empty image="/images/wallet.png" description="No wallet detected." />
           <WalletConnector />
         </Space>
       )}

@@ -88,7 +88,7 @@ export function AppLayout() {
             bottom: 0,
             left: 0,
             width: "100vw",
-            background: "#151515",
+            background: "#273251",
             borderTop: "1px solid #49ffff",
             padding: 12,
             zIndex: 10,

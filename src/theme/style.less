@@ -1,10 +1,16 @@
 @import "~antd/dist/antd.dark.less";
 @import "~antd/dist/antd.compact.less";
 @import "~antd/dist/antd.less";
+@import "./flex.less";
 
 // -- Theming
 @primary-color: darken(rgb(73, 255, 255), 30%);
 @success-color: #38ee7b;
+@warning-color: #1657FC;
+
+html {
+  --antd-wave-shadow-color: #1657FC;
+}
 
 // -- Fonts
 @font-face {
@@ -23,6 +29,11 @@
   font-family: "SourceHanSansCN-Bold";
   src: url("./fonts/SourceHansCN/SourceHanSansCN-Bold.otf");
 }
+@font-face {
+  font-family: "DINOT";
+  src: url("./fonts/DINOT/DINOT.ttf");
+}
+
 
 // -- Customs
 .IndexPoolWidget {
@@ -254,6 +265,7 @@
 }
 .ant-statistic-content-value, .colorful-text{
   background: -webkit-linear-gradient(#D1FF51, #FEE451, #FFE351);
+  background: linear-gradient(to right, #D1FF51, #FEE451, #FFE351);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -277,4 +289,110 @@ h4.ant-typography, .ant-typography h4{
 }
 .ant-menu-item-selected a, .ant-menu-item-active a{
   color:rgba(255, 255, 255, 1) !important;
+}
+.ant-btn{
+  height: 42px;
+  padding: 0 30px;
+  border-radius: 2px;
+}
+.ant-btn:hover{
+  background: #1858FA;
+}
+.ant-btn-primary{
+  background: #1858FA;
+}
+h4.ant-typography, .ant-typography h4{
+  margin-bottom: 0;
+}
+.index-pool-interaction-bar{
+  // background: #1C2948;
+  // border: 1px solid #394771;
+  // border-radius: 4px;
+}
+.ant-input-number:focus, .ant-input-number:hover, .ant-input-number-focused{
+  border: 1px solid #D7FB51;
+  border-radius: 2px;
+}
+.circle-btn{
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border-radius: 100% !important;
+}
+.ant-card-actions{
+  background: none;
+  border-top: 1px solid #394771;
+}
+.ant-card-meta-description, .ant-statistic-title, .ant-space-item, .ant-typography.ant-typography-secondary{
+  color: #FFFFFF;
+}
+.ant-typography.ant-typography-success, .theme-text{
+  color: #D7FB51 !important;
+}
+.theme-text{
+  font-family: DINOT;
+  font-size: 18px;
+  letter-spacing: 1.27px;
+}
+.ant-typography.ant-typography-danger{
+  font-family: DINOT;
+  font-size: 12px;
+  color: #FF007A;
+  letter-spacing: 0.85px;
+}
+a{
+  color: #FFFFFF;
+}
+a:hover{
+  color: #D7FB51 !important;
+}
+::selection, .ant-checkbox-checked, .ant-checkbox-checked .ant-checkbox-inner{
+  background: @warning-color !important;
+  border: 1px solid @warning-color !important;
+}
+.ant-checkbox{
+  border: 1px solid @warning-color !important;
+}
+.ant-space-item{
+  font-size: 16px !important;
+  color: #FFFFFF;
+}
+h3.ant-typography, .ant-typography h3{
+  font-size: 16px !important;
+  color: #FFFFFF;
+}
+.ant-ribbon-color-pink{
+  background: #FF007A;
+  border-radius: 2px 0 0 2px; 
+}
+.ant-btn {
+  width: 220px;
+  height: 48px;
+  font-family: SourceHanSansCN-Normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 1.54px;
+}
+
+.ant-btn-group .ant-btn-primary:last-child:not(:first-child), .ant-btn-group .ant-btn-primary + .ant-btn-primary{
+  border-left: none;
+}
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background-color: #141D3B;
+}
+.ant-btn-dangerous{
+  background: #FF007A !important;
+  border-radius: 2px;
+}
+.ant-empty-description{
+  font-family: SourceHanSansCN-Normal;
+  font-size: 18px;
+  color: #FFFFFF;
+  letter-spacing: 0.37px;
+}
+.wallet-option:hover{
+  background-image: linear-gradient(61deg, #D1FF51 3%, #FEE451 87%, #FFE351 87%);
+  background-size: 4px 100%;
+  background-repeat: no-repeat;
+  border-left: none;
 }

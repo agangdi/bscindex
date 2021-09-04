@@ -2184,8 +2184,8 @@
 
 "@indexed-finance/narwhal-sdk@^1.0.1":
   version "1.0.1"
-  resolved "https://registry.yarnpkg.com/@indexed-finance/narwhal-sdk/-/narwhal-sdk-1.0.1.tgz#c2fd94b7b244b47fd0cc8b6703f66fd0f758749b"
-  integrity sha512-msE3kSgppDkOVU9WVYSmQo1FlP/zfvNtD636YD28EnCjziUjdFFNN0jwMm4sn3evd0gOqXW6KIaB0qHuF/mbVg==
+  resolved "https://registry.nlark.com/@indexed-finance/narwhal-sdk/download/@indexed-finance/narwhal-sdk-1.0.1.tgz#c2fd94b7b244b47fd0cc8b6703f66fd0f758749b"
+  integrity sha1-wv2Ut7JEtH/QzItnA/Zv0PdYdJs=
   dependencies:
     "@uniswap/v2-core" "^1.0.0"
     big.js "^5.2.2"

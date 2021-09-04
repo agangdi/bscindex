@@ -164,7 +164,7 @@ function StakingForm({
           }
         />
 
-        <Button.Group style={{ width: "100%" }}>
+        <Button.Group style={{ width: "100%", display:"flex", justifyContent:"space-between" }}>
           <Button
             type="primary"
             danger={values.inputType === "unstake"}

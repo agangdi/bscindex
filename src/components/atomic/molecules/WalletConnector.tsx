@@ -11,7 +11,7 @@ export function WalletConnector() {
       type="primary"
       onClick={open}
       size="large"
-      style={{ marginLeft: 12 }}
+      style={{ marginLeft: 12, fontSize: 16 }}
     >
       Connect to Wallet
     </Button>

@@ -179,7 +179,7 @@ export function SushiswapStakingCard(props: Props) {
       {...props}
       linkPath="stake-sushi"
       badge="Sushiswap LP"
-      badgeColor="violet"
+      badgeColor="#FF65AE"
       backdrop={require("images/sushi.png").default}
       useApy={useMasterChefApy}
     />

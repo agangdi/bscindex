@@ -149,7 +149,7 @@ function StakingForm({
           </div>
         }
       />
-      <Button.Group style={{ width: "100%" }}>
+      <Button.Group className="flex-between" style={{ width: "100%" }}>
         {values.inputType === "stake" && status === "approval needed" ? (
           <Button
             type="primary"
@@ -331,14 +331,16 @@ export default function StakeNew() {
               />
             </Formik>
           </Col>
-          <Col xs={24} md={14}>
-            {isMobile && <Divider />}
-            <StakingStats
-              symbol={stakingToken}
-              portfolioToken={relevantPortfolioToken}
-              stakingToken={toStake}
-            />
-          </Col>
+        </Row>
+        <Row>
+          <Col xs={24} md={24}>
+              {isMobile && <Divider />}
+              <StakingStats
+                symbol={stakingToken}
+                portfolioToken={relevantPortfolioToken}
+                stakingToken={toStake}
+              />
+            </Col>
         </Row>
       </Space>
     </Page>
