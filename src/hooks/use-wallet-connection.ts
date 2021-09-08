@@ -109,6 +109,7 @@ export function useWalletOptions() {
   return relevantWallets;
 }
 
+
 export enum SupportedWallet {
   Injected,
   MetaMask,

@@ -24,6 +24,7 @@ export function PortfolioWidget(props: FormattedPortfolioAsset) {
   const symbol = props.symbol.replace("UNIV2:", "").replace("SUSHI:", "");
   const actions = [
     <Statistic
+      className="statistic2 flex-between"
       key="earned"
       title={tx("EARNED")}
       style={{ fontSize }}

@@ -4,7 +4,7 @@
  */
 export const FEATURE_FLAGS = {
   useNewsLink: true,
-  useProductionServerLocally: true,
+  useProductionServerLocally: false,
   useSessionSaving: true,
   useFortmatic: true,
   useHomepageSteps: false,
@@ -12,4 +12,4 @@ export const FEATURE_FLAGS = {
   useDEBUG: process.env.NODE_ENV === "development",
   useServerConnection: true,
   useMolassesMode: false,
-};
+}
