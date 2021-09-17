@@ -53,12 +53,12 @@ export function TypeInfo(props: IProps) {
 }
 
 export default function EXPAND() {
-  const [type, setType] = useState({
-      type: "assets",
-  });
+  const [type, setType] = useState("");
 
-  // function handleBack(name: string = '', type: string = ''): void {
-  // }
+  const changeType = () => {
+    setType(type)
+    console.log(type)
+  }
 
   return (
     <Page hasPageHeader={true} title={"EXPAND"}>
@@ -71,7 +71,7 @@ export default function EXPAND() {
           border: '1px solid #394771',
         }}
       >
-        <ChartHead type={'assets'} />
+        <ChartHead type={'assets'} onCallBack={changeType} />
         <TypeInfo type={'assets'} />
       </div>
     </Page>
