@@ -3,6 +3,7 @@ import React, { ReactNode, useState } from "react";
 
 interface IProps {
   type: string,
+  onCallBack?: any,
 }
 
 export function ChartHead(props: IProps) {
@@ -55,6 +56,9 @@ export default function EXPAND() {
   const [type, setType] = useState({
       type: "assets",
   });
+
+  // function handleBack(name: string = '', type: string = ''): void {
+  // }
 
   return (
     <Page hasPageHeader={true} title={"EXPAND"}>
