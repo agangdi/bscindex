@@ -34,6 +34,19 @@ html {
   src: url("./fonts/DINOT/DINOT.ttf");
 }
 
+// -- mixin
+/* 弹性布局 */ 
+.flex(@direction: row, @justify: space-between, @align: center, @wrap: nowrap) {
+  display: flex;
+  flex-direction: @direction;
+  flex-wrap: @wrap;
+  align-items: @align;
+  justify-content: @justify;
+}
+
+.flex-row-between {
+  .flex(row);
+}
 
 // -- Customs
 .IndexPoolWidget {

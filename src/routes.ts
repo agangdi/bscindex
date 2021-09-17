@@ -5,6 +5,7 @@ import { lazy } from "react";
 type RouteWithBreadcrumbs = RouteProps & { breadcrumbName?: TranslatedTerm };
 
 const Splash = lazy(() => import("./components/routes/Splash"));
+const Expand = lazy(() => import("./components/routes/Expand"));
 const Portfolio = lazy(() => import("./components/routes/Portfolio"));
 const Staking = lazy(() => import("./components/routes/Staking"));
 const Stake = lazy(() => import("./components/routes/Stake"));
@@ -73,5 +74,10 @@ export const routes: RouteWithBreadcrumbs[] = [
     path: "/index-pools/:slug/burn",
     exact: true,
     component: IndexPool,
+  },
+  {
+    path: "/expand",
+    exact: true,
+    component: Expand,
   },
 ];
