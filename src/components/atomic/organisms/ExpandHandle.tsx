@@ -1,15 +1,68 @@
-import { Checkbox, InputNumber, Tag } from 'antd'
-import { useState } from "react";
+import { Checkbox, InputNumber, Modal, Select, Tag } from 'antd'
+import React, {  useCallback, useEffect, useRef, useState } from "react";
+
+const { Option } = Select;
+const ref = React.createRef();
 
 interface IProps {
-    type: string,
+    type?: string,
+    show?: boolean,
+    innerRef?: any,
 }
 
-export function BuyFFF() {
+export function ModelBar(props: IProps) {
+    const { innerRef } = props;
+
+    const [show, setShow] = useState(false)
+
+    const showModel = () => {
+        setShow(true)
+    }
+    const hideModel = () => {
+        setShow(false)
+    }
+
+    useEffect(() => {
+        const preInnerFn = innerRef.current.showModel
+        innerRef.current.showModel = showModel;
+        return () => {
+            innerRef.current.showModel = preInnerFn
+        }
+    }, [showModel]);
+    
+    return (
+        <>
+            <Modal
+                title="Uniswap Minter"
+                visible={show}
+                footer={null}
+                onCancel={hideModel}
+                bodyStyle={{backgroundColor: '#172342'}}
+            >
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+                <p>Some contents...</p>
+            </Modal>
+        </>
+    )
+}
+
+export function BuyFFF(props: IProps) {
+    const ref = useRef({});
+
     const [ETH, setETH] = useState(0);
+
     const onAmountChange = (value: number) => {
         setETH(value)
     }
+
+    const onClick = useCallback(() => {
+        if(ref.current) {
+            ref.current.showModel && ref.current.showModel()
+        }
+        // console.log(ref.current)
+      }, [])
+
     return (
         <div>
             <p style={{marginBottom: '10px'}}>SEND</p>
@@ -43,7 +96,8 @@ export function BuyFFF() {
                 <span>FEE：</span>
                 <span>0.00ETH</span>
             </div>
-            <div className="expand-btn">SWAP</div>
+            <div className="expand-btn" onClick={() => onClick()}>SWAP</div>
+            <ModelBar innerRef={ref} />
         </div>
     )
 }
@@ -190,6 +244,66 @@ export function BURN() {
     )
 }
 
+export function SWAP() {
+    const [ETH, setETH] = useState(0);
+    const onAmountChange = (value: number) => {
+        setETH(value)
+    }
+    return (
+        <div>
+            <p style={{marginBottom: '10px'}}>SEND</p>
+            <div className="expand-handle-input">
+                <InputNumber
+                    style={{border: 'unset', width: '60%'}}
+                    value={ETH}
+                    step="0.01"
+                    onChange={onAmountChange}
+                />
+                <Select defaultValue="DEFI" style={{ width: 120 }}>
+                    <Option value="WBTC">
+                        <img src={require("images/defi5.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                        DEFI 5
+                    </Option>
+                    <Option value="WBTC">
+                        <img src={require("images/weth.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                        WBTC
+                    </Option>
+                </Select>
+            </div>
+            <p style={{marginBottom: '30px'}}>BALANCE: 0.0138</p>
+            <div className="flex-column-between" style={{width: '100%', height: '60px', marginBottom: '10px'}}>
+                <img src={require("images/band.png").default} style={{width: '20px', height: '20px', borderRadius: '10px'}} />
+                <span>1 DEFI5 = 0.03504 WETH</span>
+            </div>
+            <p style={{marginBottom: '10px'}}>RECEIVE</p>
+            <div className="expand-handle-input">
+                <InputNumber
+                    style={{border: 'unset', width: '60%'}}
+                    value={ETH}
+                    step="0.01"
+                    onChange={onAmountChange}
+                />
+                <Select defaultValue="DEFI" style={{ width: 120 }}>
+                    <Option value="DEFI">
+                        <img src={require("images/defi5.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                        DEFI 5
+                    </Option>
+                    <Option value="WBTC">
+                        <img src={require("images/weth.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                        WBTC
+                    </Option>
+                </Select>
+            </div>
+            <p style={{marginBottom: '20px'}}>BALANCE: 0.0138</p>
+            <div className="flex-row-between" style={{marginBottom: '40px'}}>
+                <span>FEE：</span>
+                <span>0.00ETH</span>
+            </div>
+            <div className="expand-btn">SWAP</div>
+        </div>
+    )
+}
+
 export function ExpandHandle(props: IProps) {
     return (
         <div style={{
@@ -202,6 +316,7 @@ export function ExpandHandle(props: IProps) {
             {props.type == 'Buy FFF' && <BuyFFF />}
             {props.type == 'MINT' && <MINT />}
             {props.type == 'BURN' && <BURN />}
+            {props.type == 'SWAP' && <SWAP />}
         </div>
     )
 }
