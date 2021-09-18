@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface IProps {
     type: string,
 }
@@ -39,6 +41,62 @@ const assetData: Array<{
     },
 ]
 
+const tradeData: Array<{
+    time: string;
+    input: string;
+    type: string;
+    output: string;
+    transaction: string;
+}> = [
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        type: 'BUY',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        type: 'SELL',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        type: 'SELL',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+]
+
+const swapData: Array<{
+    time: string;
+    input: string;
+    output: string;
+    transaction: string;
+}> = [
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+    {
+        time: '16 HRS AGO',
+        input: '0.1 ETH	',
+        output: '2.75 FFF',
+        transaction: '0x27……2621',
+    },
+]
+
 export function ExpandValue(props: IProps) {
     return (
         <div style={{width: 'calc(100% - 150px)', height: '100%'}}>
@@ -56,6 +114,77 @@ export function ExpandValue(props: IProps) {
                             </div>
                         </div>
                     ))}
+                </div>
+            }
+            {props.type == 'TRADES' && 
+                <div className="expand-table-value">
+                    <div className="table-head">
+                        <div style={{width: '18%'}}>TIME</div>
+                        <div style={{width: '18%'}}>INPUT</div>
+                        <div style={{width: '18%'}}>TYPE</div>
+                        <div style={{width: '18%'}}>OUTPUT</div>
+                        <div style={{width: '24%'}}>TRANSACTION</div>
+                    </div>
+                    <div className="table">
+                        {tradeData.map((item, key) => (
+                            <div className="table-row">
+                                <div style={{width: '18%'}}>{item.time}</div>
+                                <div style={{width: '18%'}}>{item.input}</div>
+                                <div style={{width: '18%', color: item.type == 'BUY' ? '#D7FB51' : '#E82574'}}>{item.type}</div>
+                                <div style={{width: '18%'}}>{item.output}</div>
+                                <div style={{width: '24%'}}>{item.transaction}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            }
+            {props.type == 'SWAPS' && 
+                <div className="expand-table-value">
+                    <div className="table-head">
+                        <div style={{width: '25%'}}>TIME</div>
+                        <div style={{width: '25%'}}>INPUT</div>
+                        <div style={{width: '25%'}}>OUTPUT</div>
+                        <div style={{width: '25%'}}>TRANSACTION</div>
+                    </div>
+                    <div className="table">
+                        {swapData.map((item, key) => (
+                            <div className="table-row">
+                                <div style={{width: '25%'}}>{item.time}</div>
+                                <div style={{width: '25%'}}>{item.input}</div>
+                                <div style={{width: '25%'}}>{item.output}</div>
+                                <div style={{width: '25%'}}>{item.transaction}</div>
+                            </div>
+                        ))}
+                    </div>
+                </div>
+            }
+            {props.type == 'INFO' && 
+                <div className="expand-info-value">
+                    <div style={{width: '40%'}}>
+                        <div className="info-btn">
+                            <Link to={'/index-pools'}>
+                                VIEW POOL
+                            </Link>
+                        </div>
+                        <div className="info-btn">
+                            <Link to={'/category'}>
+                                CATEGORY
+                            </Link>
+                        </div>
+                    </div>
+                    <div style={{
+                        width: '60%',
+                        fontSize: '14px',
+                        color: '#FFFFFF',
+                        letterSpacing: '1.4px',
+                        lineHeight: '28px',
+                    }}>
+                        <p>CUMULATIVE FEES:$30,963.94</p>
+                        <p>VOLUME: $38,524.4</p>
+                        <p>SWAP FEE: 2%</p>
+                        <p>TVL: $1,559,198.14</p>
+                        <p>SUPPLY: 21,839.54</p>
+                    </div>
                 </div>
             }
         </div>

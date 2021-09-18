@@ -35,17 +35,25 @@ html {
 }
 
 // -- mixin
-/* 弹性布局 */ 
-.flex(@direction: row, @justify: space-between, @align: center, @wrap: nowrap) {
-  display: flex;
-  flex-direction: @direction;
-  flex-wrap: @wrap;
-  align-items: @align;
-  justify-content: @justify;
+/* 文字设置 */ 
+.font(@size: 12rpx, @color: #ffffff, @line: @size, @align: left, @weight: normal) {
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @line;
+  color: @color;
+  text-align: @align;
+}
+/* 盒模型设置 */ 
+.bBox(@padding: 20rpx, @box: border-box) {
+  box-sizing: @box;
+  padding: @padding;
 }
 
-.flex-row-between {
-  .flex(row);
+// 单行省略号
+.toe {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap
 }
 
 .expand-option {
@@ -88,6 +96,55 @@ html {
         background-color: #394771;
         overflow: hidden;
       }
+    }
+  }
+}
+
+.expand-table-value {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  .font(12px, #ffffff, 50px, center);
+  .table-head {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px #394771 solid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    .flex();
+  }
+  .table {
+    width: 100%;
+    height: calc(100% - 50px);
+    position: absolute;
+    top: 50px;
+    left: 0;
+    overflow-y: auto;
+    .table-row {
+      width: 100%;
+      height: 50px;
+      border-bottom: 1px #394771 solid;
+      .flex();
+    }
+  }
+}
+
+.expand-info-value {
+  width: 100%;
+  height: 100%;
+  .bBox(25px);
+  .flex();
+  .info-btn {
+    width: 138px;
+    height: 38px;
+    border: 1px solid #394771;
+    border-radius: 2px;
+    margin-bottom: 20px;
+    .font(14px, #ffffff, 38px, center);
+    &:hover {
+      cursor: pointer;
+      border: 1px solid #D7FB51;
     }
   }
 }
