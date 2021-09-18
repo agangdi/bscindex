@@ -1,4 +1,4 @@
-import { ExpandValue, Page } from "components/atomic";
+import { ExpandHandle, ExpandValue, Page } from "components/atomic";
 import React, { ReactNode, useState } from "react";
 
 interface IProps {
@@ -7,7 +7,14 @@ interface IProps {
   tabs?: Array<string>,
 }
 
-export function ChartHead(props: IProps) {
+export function ChartHead() {
+  const [type, setType] = useState("ASSETS");
+  const tabs: Array<string> = ["ASSETS", "TRADES", "SWAPS", "INFO"];
+
+  const changeType = (type: string) => {
+    setType(type)
+    console.log(type)
+  }
   return (
     <div
       style={{
@@ -15,7 +22,7 @@ export function ChartHead(props: IProps) {
       }}
     >
       <div>
-        {props.type && <div 
+        <div 
           className="flex-row-between"
           style={{
             padding: '20px',
@@ -30,7 +37,7 @@ export function ChartHead(props: IProps) {
           </span>
           <span>$1,606,328.25 (-12.22%)</span>
           <span>VOLUME: $26881.26</span>
-        </div>}
+        </div>
       </div>
       <div
         style={{
@@ -40,7 +47,7 @@ export function ChartHead(props: IProps) {
       >
 
       </div>
-      <ValueInfo {...props} />
+      <ValueInfo type={type} tabs={tabs} onCallBack={changeType} />
     </div>
   )
 }
@@ -68,20 +75,47 @@ export function ValueInfo(props: IProps) {
   )
 }
 
-export function TypeInfo(props: IProps) {
+export function HandleValue() {
+  const [handle, setHandle] = useState("Buy FFF");
+  const handles: Array<string> = ["Buy FFF", "MINT", "BURN", "SWAP"];
+
+  const changeHandle = (type: string) => {
+    setHandle(type)
+    console.log(type)
+  }
   return (
-    <div style={{width: '40%', height: '100%', padding: '23px 39px', borderLeft: '1px solid #394771'}}></div>
+    <div style={{width: '40%', height: '100%', padding: '23px 39px', borderLeft: '1px solid #394771'}}>
+      <div
+        className="flex-row-between"
+        style={{
+          width: '100%',
+          height: '34px',
+          borderTop: '1px solid #394771',
+          borderLeft: '1px solid #394771',
+          borderBottom: '1px solid #394771',
+          fontSize: '12px',
+          color: '#ffffff',
+          textAlign: 'center',
+          lineHeight: '34px',
+        }}
+      >
+        {handles.map((item, key) => (
+          <div 
+            key={key} 
+            style={{width: '25%', borderRight: '1px solid #394771', cursor: 'pointer', backgroundColor: handle == item ? '#406AFF' : ''}}
+            onClick={() => changeHandle(item)}
+          >
+            {item}
+          </div>
+        ))}
+      </div>
+      <ExpandHandle type={handle} />
+    </div>
   )
 }
 
 export default function EXPAND() {
-  const [type, setType] = useState("ASSETS");
-  const tabs: Array<string> = ["ASSETS", "TRADES", "SWAPS", "INFO"];
-
-  const changeType = (type: string) => {
-    setType(type)
-    console.log(type)
-  }
+  
 
   return (
     <Page hasPageHeader={true} title={"EXPAND"}>
@@ -94,8 +128,8 @@ export default function EXPAND() {
           border: '1px solid #394771',
         }}
       >
-        <ChartHead type={type} tabs={tabs} onCallBack={changeType} />
-        <TypeInfo type={type} tabs={tabs} />
+        <ChartHead />
+        <HandleValue />
       </div>
     </Page>
   );

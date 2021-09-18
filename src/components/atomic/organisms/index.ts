@@ -17,4 +17,5 @@ export * from './TooltipProvider';
 export * from './TransactionList';
 export * from './WarningBar';
 export * from './Widget';
+export * from './ExpandHandle';
 export * from './ExpandValue';
