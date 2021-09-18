@@ -183,7 +183,7 @@ export function BURN() {
                     </div>
                 </Checkbox.Group>
             ))}
-            <div className="flex-row-between" style={{width: '100%', marginTop: '20px'}}>
+            <div className="flex-row-between" style={{width: '100%', marginTop: '20px', justifyContent: 'space-around'}}>
                 <div className="info-btn" style={{width: '160px'}}>BURN</div>
             </div>
         </div>
