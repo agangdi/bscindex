@@ -121,6 +121,75 @@ export function MINT() {
     )
 }
 
+export function BURN() {
+    const [FFF, setFFF] = useState(0);
+    const onAmountChange = (value: number) => {
+        setFFF(value)
+    }
+    const defaultCheckedList: Array<string> = ['DEFI 5', 'WETH'];
+    const mintData: Array<{
+        title: string;
+        icon: string;
+        value: number;
+    }> = [
+        {
+            title: 'DEFI 5',
+            icon: require("images/defi5.png").default,
+            value: 0,
+        },
+        {
+            title: 'WETH',
+            icon: require("images/defi5.png").default,
+            value: 0,
+        },
+        {
+            title: 'WBTH',
+            icon: require("images/defi5.png").default,
+            value: 0,
+        },
+    ]
+
+    const onChange = (list: Array<string>) => {
+        debugger
+    };
+
+    return (
+        <div>
+            <p style={{marginBottom: '10px'}}>DESTROY</p>
+            <div className="expand-handle-input">
+                <InputNumber
+                    style={{border: 'unset', width: '60%'}}
+                    value={FFF}
+                    step="0.01"
+                    onChange={onAmountChange}
+                />
+                <span>FFF</span>
+            </div>
+            <p style={{marginBottom: '20px'}}>BALANCE: 0.00</p>
+            {mintData.map((item, key) => (
+                <Checkbox.Group value={defaultCheckedList} style={{ width: '100%' }} onChange={() => onChange}>
+                    <div className="expand-check-bar">
+                        <Checkbox value={item.title} style={{marginRight: '18px'}}>{item.title}</Checkbox>
+                        <img src={item.icon} style={{width: '28px', height: '28px', borderRadius: '14px', marginRight: '12px'}} />
+                        <p style={{marginBottom: 'unset'}}>{item.title}</p>
+                        <div className="expand-handle-input" style={{width: '169px', marginLeft: 'auto', marginBottom: 'unset'}}>
+                            <InputNumber
+                                style={{border: 'unset', width: '60%'}}
+                                value={item.value}
+                                step="0.01"
+                            />
+                            <div className="tag-air">Amount</div>
+                        </div>
+                    </div>
+                </Checkbox.Group>
+            ))}
+            <div className="flex-row-between" style={{width: '100%', marginTop: '20px'}}>
+                <div className="info-btn" style={{width: '160px'}}>BURN</div>
+            </div>
+        </div>
+    )
+}
+
 export function ExpandHandle(props: IProps) {
     return (
         <div style={{
@@ -132,6 +201,7 @@ export function ExpandHandle(props: IProps) {
         }}>
             {props.type == 'Buy FFF' && <BuyFFF />}
             {props.type == 'MINT' && <MINT />}
+            {props.type == 'BURN' && <BURN />}
         </div>
     )
 }
