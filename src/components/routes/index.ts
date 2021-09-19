@@ -10,3 +10,5 @@ export * from './StakeMasterChef';
 export * from './StakeNew';
 export * from './Staking';
 export * from './Expand';
+export * from './ViewPool';
+export * from './CateGories';

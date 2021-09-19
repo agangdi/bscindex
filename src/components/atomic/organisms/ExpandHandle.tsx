@@ -58,7 +58,7 @@ export function BuyFFF(props: IProps) {
 
     const onClick = useCallback(() => {
         if(ref.current) {
-            ref.current.showModel && ref.current.showModel()
+            // ref.current.showModel && ref.current.showModel()
         }
         // console.log(ref.current)
       }, [])

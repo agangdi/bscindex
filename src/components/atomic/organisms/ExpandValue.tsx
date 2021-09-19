@@ -162,12 +162,12 @@ export function ExpandValue(props: IProps) {
                 <div className="expand-info-value">
                     <div style={{width: '40%'}}>
                         <div className="info-btn">
-                            <Link to={'/index-pools'}>
+                            <Link to={'/view-pool'}>
                                 VIEW POOL
                             </Link>
                         </div>
                         <div className="info-btn">
-                            <Link to={'/category'}>
+                            <Link to={'/categories'}>
                                 CATEGORY
                             </Link>
                         </div>

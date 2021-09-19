@@ -5,7 +5,6 @@ import { lazy } from "react";
 type RouteWithBreadcrumbs = RouteProps & { breadcrumbName?: TranslatedTerm };
 
 const Splash = lazy(() => import("./components/routes/Splash"));
-const Expand = lazy(() => import("./components/routes/Expand"));
 const Portfolio = lazy(() => import("./components/routes/Portfolio"));
 const Staking = lazy(() => import("./components/routes/Staking"));
 const Stake = lazy(() => import("./components/routes/Stake"));
@@ -15,6 +14,10 @@ const StakeMasterChef = lazy(
 );
 const IndexPools = lazy(() => import("./components/routes/IndexPools"));
 const IndexPool = lazy(() => import("./components/routes/IndexPool"));
+
+const Expand = lazy(() => import("./components/routes/Expand"));
+const ViewPool = lazy(() => import("./components/routes/ViewPool"));
+const CateGories = lazy(() => import("./components/routes/CateGories"));
 
 export const routes: RouteWithBreadcrumbs[] = [
   {
@@ -79,5 +82,15 @@ export const routes: RouteWithBreadcrumbs[] = [
     path: "/expand",
     exact: true,
     component: Expand,
+  },
+  {
+    path: "/view-pool",
+    exact: true,
+    component: ViewPool,
+  },
+  {
+    path: "/categories",
+    exact: true,
+    component: CateGories,
   },
 ];
