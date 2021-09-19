@@ -12,3 +12,5 @@ export * from './Staking';
 export * from './Expand';
 export * from './ViewPool';
 export * from './CateGories';
+export * from './Governance';
+export * from './GovernanceExecuted';

@@ -18,6 +18,8 @@ const IndexPool = lazy(() => import("./components/routes/IndexPool"));
 const Expand = lazy(() => import("./components/routes/Expand"));
 const ViewPool = lazy(() => import("./components/routes/ViewPool"));
 const CateGories = lazy(() => import("./components/routes/CateGories"));
+const Governance = lazy(() => import("./components/routes/Governance"));
+const GovernanceExecuted = lazy(() => import("./components/routes/GovernanceExecuted"));
 
 export const routes: RouteWithBreadcrumbs[] = [
   {
@@ -92,5 +94,15 @@ export const routes: RouteWithBreadcrumbs[] = [
     path: "/categories",
     exact: true,
     component: CateGories,
+  },
+  {
+    path: "/governance",
+    exact: true,
+    component: Governance,
+  },
+  {
+    path: "/governance-executed",
+    exact: true,
+    component: GovernanceExecuted,
   },
 ];

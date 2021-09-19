@@ -12,6 +12,10 @@ html {
   --antd-wave-shadow-color: #1657FC;
 }
 
+p {
+  margin-bottom: unset !important;
+}
+
 // -- Fonts
 @font-face {
   font-family: "SourceHanSansCN-Normal";
@@ -58,6 +62,10 @@ html {
 
 .cursor {
   cursor: pointer;
+}
+
+.border-bottom-line {
+  border-bottom: 1px solid #394771;
 }
 
 .expand-option {
@@ -185,6 +193,32 @@ html {
   height: 98px;
   border-bottom: 1px solid #394771;
   .flex(row, flex-start);
+}
+
+.gov-row {
+  width: 100%;
+  padding: 20px;
+  border-bottom: 1px solid #394771;
+  .flex();
+  .value {
+    width: 160px;
+    height: 4px;
+    margin-right: 18px;
+    border-radius: 2px;
+    background-color: #394771;
+    overflow: hidden;
+  }
+}
+
+.gov-executed {
+  .value {
+    width: 160px;
+    height: 4px;
+    margin-right: 18px;
+    border-radius: 2px;
+    background-color: #394771;
+    overflow: hidden;
+  }
 }
 
 // -- Customs
