@@ -112,11 +112,11 @@ export function RightFlex() {
             }}>
                 <h3 style={{marginBottom: '20px'}}>VOTE</h3>
                 {voteData.map((item, key) => (
-                    <div className="flex-row-start-center">
+                    <div className="flex-row-start-center" style={{marginBottom: 30}}>
                         <img src={item.icon} style={{width: 48, height: 48, borderRadius: '50%', marginRight: '30px'}} />
-                        <div className="flex-column-between" style={{width: 185, height: 65}}>
-                            <p>{item.title}</p>
-                            <p style={{color: '#D7FB51'}}>{item.value}</p>
+                        <div className="flex-column-between" style={{width: 185, height: 55, textAlign: 'left'}}>
+                            <div style={{width: '100%'}}>{item.title}</div>
+                            <div style={{width: '100%', color: '#D7FB51'}}>{item.value}</div>
                         </div>
                     </div>
                 ))}
