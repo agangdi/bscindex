@@ -42,6 +42,20 @@ export function Navigation() {
           </Space>
         </Link>
       </Menu.Item>
+      <Menu.Item key="governance">
+        <Link to="/governance">
+          <Space>
+            {!isMobile && <span>GOVERNANCE</span>}
+          </Space>
+        </Link>
+      </Menu.Item>
+      <Menu.Item key="categories">
+        <Link to="/categories">
+          <Space>
+            {!isMobile && <span>GATEGORIES</span>}
+          </Space>
+        </Link>
+      </Menu.Item>
       <Menu.Item key="staking">
         <Link to="/staking">
           <Space>
@@ -49,13 +63,13 @@ export function Navigation() {
           </Space>
         </Link>
       </Menu.Item>
-      <Menu.Item>
+      {/* <Menu.Item>
         <ExternalLink to="" withIcon={false}>
           <Space size="small">
             {!isMobile && <span>Vote</span>}
           </Space>
         </ExternalLink>
-      </Menu.Item>
+      </Menu.Item> */}
       <Menu.Item key="portfolio">
         <Link to="/portfolio">
           <Space size="small">
