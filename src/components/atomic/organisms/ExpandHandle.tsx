@@ -10,6 +10,10 @@ interface IProps {
     innerRef?: any,
 }
 
+interface showModelProps {
+    showModel?: any,
+}
+
 export function ModelBar(props: IProps) {
     const { innerRef } = props;
 
@@ -20,6 +24,11 @@ export function ModelBar(props: IProps) {
     }
     const hideModel = () => {
         setShow(false)
+    }
+
+    const [ETH, setETH] = useState(0);
+    const onAmountChange = (value: number) => {
+        setETH(value)
     }
 
     useEffect(() => {
@@ -39,9 +48,40 @@ export function ModelBar(props: IProps) {
                 onCancel={hideModel}
                 bodyStyle={{backgroundColor: '#172342'}}
             >
-                <p>Some contents...</p>
-                <p>Some contents...</p>
-                <p>Some contents...</p>
+                <div>Route swaps through Uniswap to  mint pool tokens.</div>
+                <p style={{marginBottom: '10px', marginTop: '40px'}}>SEND</p>
+                <div className="expand-handle-input">
+                    <InputNumber
+                        style={{border: 'unset', width: '60%'}}
+                        value={ETH}
+                        step="0.01"
+                        onChange={onAmountChange}
+                    />
+                    <Select defaultValue="DEFI" style={{ width: 120 }}>
+                        <Option value="WBTC">
+                            <img src={require("images/defi5.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                            DEFI 5
+                        </Option>
+                        <Option value="WBTC">
+                            <img src={require("images/weth.png").default} style={{width: '22px', height: '22px', borderRadius: '11px', marginRight: 5}} />
+                            WBTC
+                        </Option>
+                    </Select>
+                </div>
+                <p style={{marginBottom: '30px'}}>BALANCE: 0.0138</p>
+
+                <p style={{marginBottom: '10px', marginTop: '40px'}}>RECEIVE</p>
+                <div className="expand-handle-input">
+                    <InputNumber
+                        style={{border: 'unset', width: '60%'}}
+                        value={ETH}
+                        step="0.01"
+                        onChange={onAmountChange}
+                    />
+                    <span>ETH</span>
+                </div>
+                <p style={{marginBottom: '20px'}}>BALANCE: 0.0138</p>
+                <div className="info-btn" style={{width: '120px', marginTop: '40px', marginLeft: '38%'}}>MINT</div>
             </Modal>
         </>
     )
@@ -57,8 +97,9 @@ export function BuyFFF(props: IProps) {
     }
 
     const onClick = useCallback(() => {
-        if(ref.current) {
-            // ref.current.showModel && ref.current.showModel()
+        const modelProps: showModelProps = ref.current
+        if(modelProps) {
+            modelProps.showModel && modelProps.showModel()
         }
         // console.log(ref.current)
       }, [])
@@ -96,7 +137,7 @@ export function BuyFFF(props: IProps) {
                 <span>FEE：</span>
                 <span>0.00ETH</span>
             </div>
-            <div className="expand-btn" onClick={() => onClick()}>SWAP</div>
+            <div className="expand-btn cursor" onClick={() => onClick()}>SWAP</div>
             <ModelBar innerRef={ref} />
         </div>
     )
@@ -245,10 +286,21 @@ export function BURN() {
 }
 
 export function SWAP() {
+    const ref = useRef({});
+
     const [ETH, setETH] = useState(0);
+
     const onAmountChange = (value: number) => {
         setETH(value)
     }
+    const onClick = useCallback(() => {
+        const modelProps: showModelProps = ref.current
+        if(modelProps) {
+            modelProps.showModel && modelProps.showModel()
+        }
+        // console.log(ref.current)
+      }, [])
+
     return (
         <div>
             <p style={{marginBottom: '10px'}}>SEND</p>
@@ -299,7 +351,8 @@ export function SWAP() {
                 <span>FEE：</span>
                 <span>0.00ETH</span>
             </div>
-            <div className="expand-btn">SWAP</div>
+            <div className="expand-btn cursor" onClick={() => onClick()}>SWAP</div>
+            <ModelBar innerRef={ref} />
         </div>
     )
 }
