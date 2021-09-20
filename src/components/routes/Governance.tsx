@@ -1,5 +1,5 @@
 import { Checkbox, Input } from 'antd'
-import { Page } from "components/atomic";
+import { IndexPoolChart, Page } from "components/atomic";
 import { useState } from "react";
 
 export function GovernanceInfo() {
@@ -28,7 +28,7 @@ export function GovernanceInfo() {
         <div
             style={{
                 width: '48.5%',
-                height: '282px',
+                height: '343px',
                 border: '1px solid #394771',
                 marginBottom: '60px',
                 overflowY: 'auto',
@@ -74,11 +74,13 @@ export function GovernanceChart() {
         <div
             style={{
                 width: '48.5%',
-                height: '282px',
+                // height: '282px',
                 border: '1px solid #394771',
                 marginBottom: '60px',
             }}
-        ></div>
+        >
+            <IndexPoolChart poolId="0xfa6de2697d59e88ed7fc4dfe5a33dac43565ea41" />
+        </div>
     )
 }
 

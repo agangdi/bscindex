@@ -1,4 +1,4 @@
-import { ExpandHandle, ExpandValue, Page } from "components/atomic";
+import { ExpandHandle, ExpandValue, IndexPoolChart, Page } from "components/atomic";
 import React, { ReactNode, useState } from "react";
 
 interface IProps {
@@ -45,7 +45,7 @@ export function ChartHead() {
           borderBottom: '1px solid #394771',
         }}
       >
-
+        <IndexPoolChart poolId="0xfa6de2697d59e88ed7fc4dfe5a33dac43565ea41" />
       </div>
       <ValueInfo type={type} tabs={tabs} onCallBack={changeType} />
     </div>

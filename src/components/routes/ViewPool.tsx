@@ -1,16 +1,18 @@
-import { Page } from "components/atomic";
+import { IndexPoolChart, Page } from "components/atomic";
 
 export function ViewChart() {
     return (
         <div
             style={{
                 width: '48.5%',
-                height: '248.5px',
+                // height: '248.5px',
                 background: '#1C2948.5',
                 border: '1px solid #394771',
                 marginBottom: '40px',
             }}
-        ></div>
+        >
+            <IndexPoolChart poolId="0xabafa52d3d5a2c18a4c1ae24480d22b831fc0413" />
+        </div>
     )
 }
 
