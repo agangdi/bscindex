@@ -54,11 +54,11 @@ const slice = createSlice({
           addedTime: Date.now(),
           from: tx.from,
           to: tx.to,
-          gasPrice: tx.gasPrice.toNumber(),
-          gasLimit: tx.gasLimit.toNumber(),
+          gasPrice: tx?.gasPrice?.toNumber(),
+          gasLimit: tx?.gasLimit?.toNumber(),
           status: "pending",
           ...extra,
-        });
+        } as any);
       })
       .addCase(transactionFinalized, (state, action) => {
         const { receipt: { transactionHash, status, gasUsed } } = action.payload;

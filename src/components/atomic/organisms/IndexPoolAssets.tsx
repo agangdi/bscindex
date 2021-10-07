@@ -42,7 +42,6 @@ export function IndexPoolAssets({ assets }: FormattedIndexPool) {
                 <Progress
                   style={{ flex: 1, textAlign: "right" }}
                   width={isMobile ? 60 : 80}
-                  theme="outrun"
                   status="active"
                   type="dashboard"
                   percent={parseFloat(asset.weightPercentage.replace(/%/g, ""))}

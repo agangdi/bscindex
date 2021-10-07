@@ -4,7 +4,8 @@ import { useSelector } from "react-redux";
 
 export function Progress(props: ProgressProps) {
   // const theme= useSelector(selectors.selectTheme);
-  const theme = props.theme
+  // const theme = props.theme
+  const theme = "outrun"
   const progressStrokeColor: any =
     theme === "outrun"
       ? {

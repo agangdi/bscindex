@@ -33,7 +33,7 @@ async function sendTransaction(status: number, time = 4000) {
     byzantium: false,
     transactionHash,
     status,
-  };
+  } as any;
   const transaction: TransactionResponse = {
     blockNumber: 1,
     blockHash: "123",

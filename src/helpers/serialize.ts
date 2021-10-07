@@ -55,7 +55,7 @@ export function deserializeOnChainCall(callId: string): null | RegisteredCall {
       return common;
     }
   } catch (error) {
-    debugConsole.error("Bad on-chain call ID", callId, error);
+    debugConsole.error("Bad on-chain call ID", callId, error as any);
     return null;
   }
 }
